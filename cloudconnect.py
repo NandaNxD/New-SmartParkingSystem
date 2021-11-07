@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import firestore
 from firebase_admin import credentials
 import calendar
-import time
+import time 
 
 #First and last slot numbers
 first_slot_number=1
@@ -34,10 +34,7 @@ def assignParkingSlot(REG_NO,db,slot_list):
 
 
 #Clear all the slots in the firestore and set the values to default values 
-def clearAllSlots(slot_list,db):
-    gmt=time.gmtime()
-    ts=calendar.timegm(gmt)
-    
+def clearAllSlots(slot_list,db):    
     for i in slot_list:
         slot=db.collection('car').document(str(i))
         slot.set({
@@ -45,9 +42,9 @@ def clearAllSlots(slot_list,db):
             'EMPTY':True,
             'REG_NO':'',
             'TIME_IN':firestore.firestore.SERVER_TIMESTAMP,
-            'TIME_OUT':-1  
+            'TIME_OUT':-1,
+            'LOCATION':firestore.firestore.GeoPoint(12,12),  
         })  
-
 
 
 if __name__=="__main__":
