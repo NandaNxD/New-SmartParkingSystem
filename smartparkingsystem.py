@@ -52,13 +52,13 @@ def buzzerOff(BUZZER_PIN):
     
     
 if __name__ == '__main__':
-    GPIO_TRIGGER1 = 22
-    GPIO_ECHO1 = 4
-    GPIO_TRIGGER2 = 20
-    GPIO_ECHO2 = 23
-    LED_PIN=12
-    BUZZER_PIN=16
-
+    GPIO_TRIGGER1 = 4
+    GPIO_ECHO1 = 27
+    GPIO_TRIGGER2 = 22
+    GPIO_ECHO2 = 10
+    LED_PIN=9
+    BUZZER_PIN=11
+    SERVO_PIN=26
     #set GPIO direction (IN / OUT)
     GPIO.setup(GPIO_TRIGGER1, GPIO.OUT)
     GPIO.setup(GPIO_ECHO1, GPIO.IN)
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     GPIO.setup(BUZZER_PIN,GPIO.OUT)
 
     factory = PiGPIOFactory()
-    servo = Servo(26, pin_factory=factory)
+    servo = Servo(SERVO_PIN, pin_factory=factory)
     GPIO.setwarnings(False)
 
     try:
