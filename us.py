@@ -2,8 +2,8 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-TRIG=22
-ECHO=10
+TRIG=4
+ECHO=27
 print('Distance measurement in Progress')
 GPIO.setup(TRIG,GPIO.OUT)
 GPIO.setup(ECHO,GPIO.IN)

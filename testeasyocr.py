@@ -1,7 +1,6 @@
-import cv2
-!sudo apt install tesseract-ocr
-!pip install easyocr
-!pip install pytesseract
+#sudo apt install tesseract-ocr
+#pip install easyocr
+#pip install pytesseract
 import pytesseract 
 import cv2
 from matplotlib import pyplot as plt
@@ -9,7 +8,7 @@ import numpy as np
 import imutils
 import easyocr
 
-image=cv2.imread('image.jpg')
+image=cv2.imread('l1.jpg')
 
 cv2_imshow(image)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
